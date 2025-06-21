@@ -1,0 +1,9 @@
+路線,時間,費用,轉車情況,詳細路線,Google Maps連結
+成田機場→上野,40分鐘,¥2570,直達,成田機場第2航廈→京成上野,https://www.google.com/maps/dir/成田機場/京成上野?hl=zh-TW
+上野→秋葉原,10分鐘,¥160,直達,上野→秋葉原 (JR山手線外環),https://www.google.com/maps/dir/上野/秋葉原?hl=zh-TW
+上野→東京站,7分鐘,¥160,直達,上野→東京站 (JR山手線外環),https://www.google.com/maps/dir/上野/東京站?hl=zh-TW
+上野→澀谷,22分鐘,¥200,直達,上野→澀谷 (JR山手線外環),https://www.google.com/maps/dir/上野/澀谷?hl=zh-TW
+上野→新宿,25分鐘,¥200,直達,上野→新宿 (JR山手線外環),https://www.google.com/maps/dir/上野/新宿?hl=zh-TW
+東京站→銀座,5分鐘,¥160,直達,東京站→銀座 (地鐵丸之內線),https://www.google.com/maps/dir/東京站/銀座?hl=zh-TW
+澀谷→原宿,2分鐘,¥160,直達,澀谷→原宿 (JR山手線),https://www.google.com/maps/dir/澀谷/原宿?hl=zh-TW
+新宿→成田機場,70分鐘,¥2570,需轉車,新宿→JR→京成Skyliner→成田機場,https://www.google.com/maps/dir/新宿/成田機場?hl=zh-TW

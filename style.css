@@ -1,0 +1,504 @@
+/* 貓貓戰爭臉2025東京自由行網站樣式 */
+:root {
+    --primary: #ea5532;    /* 朱紅色 */
+    --secondary: #33a6b8;  /* 湖水藍 */
+    --accent: #f8b500;     /* 金黃色 */
+    --background: #fffffb; /* 米白色 */
+    --text: #1a1a1a;       /* 炭黑色 */
+    --card-bg: #ffffff;    /* 純白色 */
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* 夜間模式變數 */
+.dark-mode {
+    --primary: #ff7b59;    /* 亮朱紅 */
+    --secondary: #4fcadb;  /* 亮湖水藍 */
+    --accent: #ffcb4c;     /* 亮金黃 */
+    --background: #121212; /* 深灰背景 */
+    --text: #f5f5f5;       /* 淺灰文字 */
+    --card-bg: #1e1e1e;    /* 深灰卡片 */
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Playfair Display', 'Noto Sans JP', serif;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin: 2rem 0 1rem;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--secondary);
+    margin: 1.5rem 0 1rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* 頁首樣式 */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 導航樣式 */
+nav {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 5px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    overflow-x: auto;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    white-space: nowrap;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0.5rem 0;
+    color: var(--text);
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+}
+
+/* 主內容區域 */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+/* 卡片樣式 */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow);
+}
+
+.daily-budget {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px var(--shadow);
+    text-align: center;
+}
+
+/* 時間軸樣式 */
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30px;
+    width: 2px;
+    background-color: var(--secondary);
+}
+
+.time-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+    padding-left: 60px;
+}
+
+.time {
+    position: absolute;
+    left: 0;
+    width: 60px;
+    height: 30px;
+    background-color: var(--secondary);
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 15px;
+    z-index: 10;
+}
+
+.content {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+/* 景點卡片樣式 */
+.spots {
+    margin-top: 2rem;
+}
+
+.spot-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.spot-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.spot-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 貼士樣式 */
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tip-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-3px);
+}
+
+.emergency {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px var(--shadow);
+    border-left: 4px solid var(--primary);
+}
+
+/* Google Maps 連結按鈕 */
+.map-link {
+    display: inline-block;
+    background-color: var(--secondary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.map-link:hover {
+    background-color: var(--primary);
+    text-decoration: none;
+}
+
+/* 頁尾樣式 */
+footer {
+    background-color: var(--card-bg);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    box-shadow: 0 -2px 5px var(--shadow);
+}
+
+.theme-toggle {
+    margin-top: 1rem;
+}
+
+#theme-btn {
+    background-color: var(--text);
+    color: var(--background);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#theme-btn:hover {
+    background-color: var(--primary);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    nav ul li {
+        margin: 0.25rem 0.5rem;
+    }
+
+    .time-item {
+        padding-left: 50px;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .time {
+        width: 40px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .time-item {
+        padding-left: 40px;
+    }
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .time {
+        width: 30px;
+        font-size: 0.7rem;
+    }
+}
+
+
+/* 旅行貼士與住宿資訊樣式 */
+
+.tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tip-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+}
+
+.tip-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 0.5rem;
+}
+
+.important-notes {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 8px var(--shadow);
+    border-left: 4px solid var(--primary);
+}
+
+.important-notes ol {
+    padding-left: 1.5rem;
+}
+
+.important-notes li {
+    margin-bottom: 0.5rem;
+}
+
+.app-recommendations {
+    margin: 2rem 0;
+}
+
+.app-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.app-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px var(--shadow);
+}
+
+.app-card h4 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 0.5rem;
+}
+
+.app-card ul {
+    padding-left: 1.5rem;
+}
+
+.app-card li {
+    margin-bottom: 0.5rem;
+}
+
+.emergency {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 4px 8px var(--shadow);
+    border-left: 4px solid var(--primary);
+}
+
+
+
+/* 每日完整路線按鈕樣式 */
+.route-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.route-buttons .map-link {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.route-buttons .map-link:hover {
+  background-color: var(--accent);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
